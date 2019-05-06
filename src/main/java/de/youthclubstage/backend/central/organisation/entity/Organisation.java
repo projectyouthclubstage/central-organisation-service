@@ -5,18 +5,22 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
-@RedisHash("User")
+@RedisHash("Organisation")
 @Data
-public class User {
+public class Organisation {
 
     @Id
     @Indexed
     private Long id;
 
-    @Indexed
-    private String firstName;
+    private String name;
 
-    @Indexed
-    private String lastName;
+    private Long contactUserId;
+
+    private String description;
+
+    private String city;
+
+    private Integer numberOfMembers;
 
 }
